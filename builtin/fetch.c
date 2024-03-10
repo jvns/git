@@ -1245,6 +1245,8 @@ static int store_updated_refs(struct display_state *display_state,
 					  note.buf, display_state->url,
 					  display_state->url_len);
 
+			// TODO: store fact that remote-tracking branch was fetched somewhere around here?
+
 			if (ref) {
 				rc |= update_local_ref(ref, transaction, display_state,
 						       rm, summary_width, config);

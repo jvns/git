@@ -559,6 +559,8 @@ void transport_update_tracking_ref(struct remote *remote, struct ref *ref, int v
 
 	if (ref->status != REF_STATUS_OK && ref->status != REF_STATUS_UPTODATE)
 		return;
+	// TODO: also store the fact that the remote-tracking branch was
+	// successfully fetched around here somewhere, even if it was up to date
 
 	report = ref->report;
 	if (!report)
