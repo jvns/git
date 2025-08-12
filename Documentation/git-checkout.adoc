@@ -20,11 +20,33 @@ git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>...]
 
 DESCRIPTION
 -----------
-Updates files in the working tree to match the version in the index
-or the specified tree.  If no pathspec was given, `git checkout` will
-also update `HEAD` to set the specified branch as the current
-branch.
 
+`git checkout` can be used in 5 different ways, called "modes":
+
+1. **Switch branches**, with `git checkout <branch>`
+2. **Create a branch**, with `git checkout -b <branch>`
+3. **Switch to a commit and detach HEAD**, with `git checkout <commit>`
+   or `git checkout --detach <branch>`
+4. **Restore a different version of a file**, for example with `git
+   checkout <commit> <filename>` or `git checkout <filename>`
+5. **Patch mode**
+
+When you run `git checkout <something>`, Git tries to guess whether
+`<something>` is intended to be a branch, a commit, or a filename, and
+then switches branches, switches commits, or restores the filename.
+
+If there's a conflict, you can use the double dash `--` to distinguish
+between branches and files:
+
+* `git checkout <branch> --` will force Git to treat the parameter as a
+  branch name
+* `git checkout -- <filename>` will force Git to treat the parameter as
+  a filename
+
+Here is a full description of all of the modes:
+
+
+1. **Switch branches**:
 `git checkout [<branch>]`::
 	To prepare for working on _<branch>_, switch to it by updating
 	the index and the files in the working tree, and by pointing
@@ -44,7 +66,7 @@ You could omit _<branch>_, in which case the command degenerates to
 "check out the current branch", which is a glorified no-op with
 rather expensive side-effects to show only the tracking information,
 if it exists, for the current branch.
-
+2. **Create a branch**:
 `git checkout (-b|-B) <new-branch> [<start-point>]`::
 
 	Specifying `-b` causes a new branch to be created as if
@@ -66,7 +88,7 @@ that is to say, the branch is not reset/created unless "git checkout" is
 successful (e.g., when the branch is in use in another worktree, not
 just the current branch stays the same, but the branch is not reset to
 the start-point, either).
-
+3. **Enter detached HEAD state**:
 `git checkout --detach [<branch>]`::
 `git checkout [--detach] <commit>`::
 
@@ -82,7 +104,7 @@ be used to detach `HEAD` at the tip of the branch (`git checkout
 <branch>` would check out that branch without detaching `HEAD`).
 +
 Omitting _<branch>_ detaches `HEAD` at the tip of the current branch.
-
+4. **Restore "ours" or "theirs" versions in a merge conflict**:
 `git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <pathspec>...`::
 `git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] --pathspec-from-file=<file> [--pathspec-file-nul]`::
 
@@ -99,7 +121,7 @@ Using `-f` will ignore these unmerged entries.  The contents from a
 specific side of the merge can be checked out of the index by
 using `--ours` or `--theirs`.  With `-m`, changes made to the working tree
 file can be discarded to re-create the original conflicted merge result.
-
+5. **Patch mode**:
 `git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>...]`::
 	This is similar to the previous mode, but lets you use the
 	interactive interface to show the "diff" output and choose which
