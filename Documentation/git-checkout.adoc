@@ -381,135 +381,87 @@ For more details, see the 'pathspec' entry in linkgit:gitglossary[7].
 
 DETACHED HEAD
 -------------
-`HEAD` normally refers to a named branch (e.g. `master`). Meanwhile, each
-branch refers to a specific commit. Let's look at a repo with three
-commits, one of them tagged, and with branch `master` checked out:
+In Git, `HEAD` is a tiny file containing the name of the current branch.
+When you commit, Git will update the current branch (for example
+`main`) to point at the new commit.
+
+For example, here's what your repository might look like before and
+after a commit while on the `main` branch:
+
+Before commit:
 
 ------------
-           HEAD (refers to branch 'master')
+           HEAD (refers to branch 'main')
             |
             v
-a---b---c  branch 'master' (refers to commit 'c')
-    ^
-    |
-  tag 'v2.0' (refers to commit 'b')
+a---b---c  branch 'main' (refers to commit 'c')
 ------------
 
-When a commit is created in this state, the branch is updated to refer to
-the new commit. Specifically, `git commit` creates a new commit `d`, whose
-parent is commit `c`, and then updates branch `master` to refer to new
-commit `d`. `HEAD` still refers to branch `master` and so indirectly now refers
-to commit `d`:
+After commit:
 
 ------------
-$ edit; git add; git commit
-
-               HEAD (refers to branch 'master')
+               HEAD (refers to branch 'main')
                 |
                 v
-a---b---c---d  branch 'master' (refers to commit 'd')
-    ^
-    |
-  tag 'v2.0' (refers to commit 'b')
+a---b---c---d  branch 'main' (refers to commit 'd')
 ------------
 
-It is sometimes useful to be able to checkout a commit that is not at
-the tip of any named branch, or even to create a new commit that is not
-referenced by a named branch. Let's look at what happens when we
-checkout commit `b` (here we show two ways this may be done):
+However, `HEAD` does not always refer to a branch: it can refer to a
+commit instead. This is called "detached `HEAD` state".
+
+It's easy to set HEAD to a commit ID instead of a branch
+accidentally: running `git checkout` with a tag, remote-tracking branch,
+or `HEAD^` will all set HEAD to a commit ID. For example:
 
 ------------
-$ git checkout v2.0  # or
-$ git checkout master^^
-
-   HEAD (refers to commit 'b')
-    |
-    v
-a---b---c---d  branch 'master' (refers to commit 'd')
-    ^
-    |
-  tag 'v2.0' (refers to commit 'b')
+$ git checkout v1.2
+$ git checkout origin/main
+$ git checkout HEAD^
 ------------
 
-Notice that regardless of which checkout command we use, `HEAD` now refers
-directly to commit `b`. This is known as being in detached `HEAD` state.
-It means simply that `HEAD` refers to a specific commit, as opposed to
-referring to a named branch. Let's see what happens when we create a commit:
+If you create new commits while in detached `HEAD` state, the commits
+you make will not be on any branch: they'll be orphaned. Orphaned
+commits can cause problems for 2 reasons:
+
+1. They're difficult to find: you can't run `git checkout <branch>` to
+   access those commits.
+2. Eventually those commits will be permanently deleted by Git's garbage
+   collection.
+
+For example, imagine that we check out the commit `b` in detached HEAD
+state, create 2 new commits, and then run `git checkout main`. This is
+the result:
 
 ------------
-$ edit; git add; git commit
+$ git checkout main
 
-     HEAD (refers to commit 'e')
-      |
-      v
-      e
-     /
-a---b---c---d  branch 'master' (refers to commit 'd')
-    ^
-    |
-  tag 'v2.0' (refers to commit 'b')
-------------
-
-There is now a new commit `e`, but it is referenced only by `HEAD`. We can
-of course add yet another commit in this state:
-
-------------
-$ edit; git add; git commit
-
-	 HEAD (refers to commit 'f')
-	  |
-	  v
-      e---f
-     /
-a---b---c---d  branch 'master' (refers to commit 'd')
-    ^
-    |
-  tag 'v2.0' (refers to commit 'b')
-------------
-
-In fact, we can perform all the normal Git operations. But, let's look
-at what happens when we then checkout `master`:
-
-------------
-$ git checkout master
-
-               HEAD (refers to branch 'master')
+               HEAD (refers to branch 'main')
       e---f     |
      /          v
-a---b---c---d  branch 'master' (refers to commit 'd')
-    ^
-    |
-  tag 'v2.0' (refers to commit 'b')
+a---b---c---d  branch 'main' (refers to commit 'd')
 ------------
 
-It is important to realize that at this point nothing refers to commit
-`f`. Eventually commit `f` (and by extension commit `e`) will be deleted
-by the routine Git garbage collection process, unless we create a reference
-before that happens. If we have not yet moved away from commit `f`,
-any of these will create a reference to it:
+If you've created commits while in detached HEAD state, here's how
+to create a branch that points to those commits so that they're not
+orphaned.
 
-------------
-$ git checkout -b foo  # or "git switch -c foo"  <1>
-$ git branch foo                                 <2>
-$ git tag foo                                    <3>
-------------
-<1> creates a new branch `foo`, which refers to commit `f`, and then
-    updates `HEAD` to refer to branch `foo`. In other words, we'll no longer
-    be in detached `HEAD` state after this command.
-<2> similarly creates a new branch `foo`, which refers to commit `f`,
-    but leaves `HEAD` detached.
-<3> creates a new tag `foo`, which refers to commit `f`,
-    leaving `HEAD` detached.
+If you still have the commit checked out, you can create a new branch at
+that commit with:
 
-If we have moved away from commit `f`, then we must first recover its object
-name (typically by using git reflog), and then we can create a reference to
-it. For example, to see the last two commits to which `HEAD` referred, we
-can use either of these commands:
+   git checkout -b mynewbranch
 
-------------
-$ git reflog -2 HEAD # or
-$ git log -g -2 HEAD
-------------
+If you have moved away from the commit, then you first have to find its
+commit ID. For example, you can use `git reflog` to look at the last 4
+commits HEAD pointed to like this:
+
+   git reflog -4 HEAD
+
+Once you have the commit ID, you can check it out and create a new
+branch like this:
+
+   git checkout <commit-id>
+   git checkout -b mynewbranch
+
 
 ARGUMENT DISAMBIGUATION
 -----------------------
