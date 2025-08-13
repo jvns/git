@@ -75,36 +75,18 @@ if it exists, for the current branch.
 	which will be passed to `git branch`.  As a convenience,
 	`--track` without `-b` implies branch creation; see the
 	description of `--track` below.
-+
-If `-B` is given, _<new-branch>_ is created if it doesn't exist; otherwise, it
-is reset. This is the transactional equivalent of
-+
-------------
-$ git branch -f <branch> [<start-point>]
-$ git checkout <branch>
-------------
-+
-that is to say, the branch is not reset/created unless "git checkout" is
-successful (e.g., when the branch is in use in another worktree, not
-just the current branch stays the same, but the branch is not reset to
-the start-point, either).
-3. **Enter detached HEAD state**:
+3. **Switch to a commit and detach HEAD**:
 `git checkout --detach [<branch>]`::
 `git checkout [--detach] <commit>`::
-
-	Prepare to work on top of _<commit>_, by detaching `HEAD` at it
-	(see "DETACHED HEAD" section), and updating the index and the
-	files in the working tree.  Local modifications to the files
-	in the working tree are kept, so that the resulting working
-	tree will be the state recorded in the commit plus the local
-	modifications.
++
+This is exactly the same as "switch branches", except that HEAD is set
+to a commit ID instead of a branch name. Setting HEAD to a commit ID is
+called "detaching HEAD".
 +
 When the _<commit>_ argument is a branch name, the `--detach` option can
-be used to detach `HEAD` at the tip of the branch (`git checkout
-<branch>` would check out that branch without detaching `HEAD`).
-+
-Omitting _<branch>_ detaches `HEAD` at the tip of the current branch.
-4. **Restore "ours" or "theirs" versions in a merge conflict**:
+be used to detach `HEAD` at the tip of the branch. Omitting _<branch>_
+detaches `HEAD` at the tip of the current branch.
+4. **Restore a version of a file from a commit**:
 `git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] [--] <pathspec>...`::
 `git checkout [-f|--ours|--theirs|-m|--conflict=<style>] [<tree-ish>] --pathspec-from-file=<file> [--pathspec-file-nul]`::
 
@@ -123,10 +105,9 @@ using `--ours` or `--theirs`.  With `-m`, changes made to the working tree
 file can be discarded to re-create the original conflicted merge result.
 5. **Patch mode**:
 `git checkout (-p|--patch) [<tree-ish>] [--] [<pathspec>...]`::
-	This is similar to the previous mode, but lets you use the
-	interactive interface to show the "diff" output and choose which
-	hunks to use in the result.  See below for the description of
-	`--patch` option.
+	This is similar to the previous mode, but lets you choose which parts
+	of a file to restore with an interactive interface. See below for the
+	description of 	`--patch` option.
 
 OPTIONS
 -------
