@@ -98,15 +98,11 @@ to point at the new commit.
 	revision.
 
 [[def_commit-ish]]commit-ish (also committish)::
-	A <<def_commit_object,commit object>> or an <<def_object,object>> that
-	can be recursively <<def_dereference,dereferenced>> to a commit object.
-	The following are all commit-ishes:
-	a commit object,
-	a <<def_tag_object,tag object>> that points to a commit
-	object,
-	a tag object that points to a tag object that points to a
-	commit object,
-	etc.
+	A <<def_commit,commit>> ID, or something that can be resolved to a
+	commit ID. For example, the following are all commit-ishes: a commit ID,
+	a <<def_branch,branch>> name, a <<def_tag,tag>> name, `HEAD^`, and a
+	<<def_tag_object,tag object>> that points to a commit object. See
+	linkgit:gitrevisions[7] for ways to refer to commit IDs.
 
 [[def_core_git]]core Git::
 	Fundamental data structures and utilities of Git. Exposes only limited
@@ -711,18 +707,17 @@ the `refs/tags/` hierarchy is used to represent local tags..
 	<<def_tree,tree>> is equivalent to a <<def_directory,directory>>.
 
 [[def_tree-ish]]tree-ish (also treeish)::
-	A <<def_tree_object,tree object>> or an <<def_object,object>> that can
-	be recursively <<def_dereference,dereferenced>> to a tree object.
-	Dereferencing a <<def_commit_object,commit object>> yields the tree
-	object corresponding to the <<def_revision,revision>>'s top
-	<<def_directory,directory>>.
-	The following are all tree-ishes:
-	a <<def_commit-ish,commit-ish>>,
-	a tree object,
-	a <<def_tag_object,tag object>> that points to a tree object,
-	a tag object that points to a tag object that points to a tree
-	object,
-	etc.
+	A <<def_tree_object,tree object>> ID or something that can be resolved to a
+	tree object. Examples of `<tree-ish>es`:
+
+	* Every `<commit-ish>` is a `<tree-ish>`, by taking the
+	  <<def_commit,commit>>'s top <<def_directory,directory>>.
+	* a subdirectory of a <commit-ish>, like `master:src/`
+	* a <<def_tag_object,tag object>> that points to a tree object
+	* a tag object that points to a tag object that points to a tree
+	  object
+
+	See linkgit:gitrevisions[7] for more ways to refer to trees in Git.
 
 [[def_unborn]]unborn::
 	The <<def_HEAD,HEAD>> can point at a <<def_branch,branch>>
