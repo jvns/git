@@ -29,18 +29,19 @@ To decide which repository to push to, Git will look at
 2. The `branch.*.remote` configuration for the current branch
 3. The default is 'origin'
 
-When the command line does not specify what to push with `<refspec>...`
-arguments or `--all`, `--mirror`, `--tags` options, the command finds
-the default `<refspec>` by consulting `remote.*.push` configuration,
-and if it is not found, honors `push.default` configuration to decide
-what to push (See linkgit:git-config[1] for the meaning of `push.default`).
+To decide which branches, tags, or other refs to push, Git will look at
+(in order of priority):
 
-When neither the command-line nor the configuration specifies what to
-push, the default behavior is used, which corresponds to the `simple`
-value for `push.default`: the current branch is pushed to the
-corresponding upstream branch, but as a safety measure, the push is
-aborted if the upstream branch does not have the same name as the
-local one.
+1. The <refspec> arguments (for example `git push origin main`)
+2. The `--all`, `--mirror`, or `--tags` options
+3. The `remote.*.push` configuration for the current branch
+4. The `push.default` configuration (See linkgit:git-config[1] for
+   the meaning of `push.default`).
+
+By default (for example if you run `git push` and none of the above is
+configured) the current branch is pushed to the corresponding upstream
+branch. The push is aborted if the upstream branch does not have the
+same name as the local one.
 
 You can make interesting things happen to a repository
 every time you push into it, by setting up 'hooks' there.  See
