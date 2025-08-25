@@ -22,10 +22,12 @@ DESCRIPTION
 Updates one or more branches, tags, or other references in a remote
 repository from your local repository.
 
-When the command line does not specify where to push with the
-`<repository>` argument, `branch.*.remote` configuration for the
-current branch is consulted to determine where to push.  If the
-configuration is missing, it defaults to 'origin'.
+To decide which repository to push to, Git will look at
+(in order of priority):
+
+1. The `<repository>` argument (for example `git push dev`)
+2. The `branch.*.remote` configuration for the current branch
+3. The default is 'origin'
 
 When the command line does not specify what to push with `<refspec>...`
 arguments or `--all`, `--mirror`, `--tags` options, the command finds
