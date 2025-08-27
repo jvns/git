@@ -254,8 +254,11 @@ static void setup_default_push_refspecs(int *flags, struct remote *remote)
 	default:
 	case PUSH_DEFAULT_UNSPECIFIED:
 	case PUSH_DEFAULT_SIMPLE:
-		if (!same_remote)
+		if (!same_remote) {
+			fprintf(stderr, "DEBUG: different remote, skipping upstream check\n");
 			break;
+		}
+		fprintf(stderr, "DEBUG: same remote, checking upstream\n");
 		if (strcmp(branch->refname, get_upstream_ref(*flags, branch, remote->name)))
 			die_push_simple(branch, remote);
 		break;
