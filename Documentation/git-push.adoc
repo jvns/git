@@ -56,18 +56,20 @@ OPTIONS[[OPTIONS]]
 	of a remote (see the section <<REMOTES,REMOTES>> below).
 
 <refspec>...::
-	Specify what destination ref to update with what source object.
-	The format of a <refspec> parameter is an optional plus
-	`+`, followed by the source object <src>, followed
-	by a colon `:`, followed by the destination ref <dst>.
+	Specify what destination branch or tag (or other reference) to update
+	with what source commit (or other object).
 +
-The <src> is often the name of the branch you would want to push, but
-it can be any arbitrary "SHA-1 expression", such as `master~4` or
-`HEAD` (see linkgit:gitrevisions[7]).
+The format for a refspec is [+]<src>[:<dst>], for example `main`,
+`main:other`, or `HEAD^:refs/heads/main`.
 +
-The <dst> tells which ref on the remote side is updated with this
-push. Arbitrary expressions cannot be used here, an actual ref must
-be named.
+The `<src>` is often the name of the local branch to push, but it can be
+any arbitrary "SHA-1 expression" (see linkgit:gitrevisions[7]).
++
+The `<dst>` determines what to update on the remote side. It must be the
+name of a branch, tag, or other ref, not an arbitrary expression.
++
+The `+` is optional and does the same thing as `--force`.
++
 If `git push [<repository>]` without any `<refspec>` argument is set to
 update some ref at the destination with `<src>` with
 `remote.<repository>.push` configuration variable, `:<dst>` part can
