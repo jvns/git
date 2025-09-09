@@ -27,6 +27,22 @@ and then depending on configuration options or command line flags,
 will call either `git rebase` or `git merge` to reconcile diverging
 branches.
 
+For example, imagine you'd like to update your local `main` branch with
+changes from a remote, like this:
+
+------------
+    A---B---C---D <- remote 'main'
+	^
+	local 'main'
+------------
+
+Then `git pull` will update ("fast-forward") the local `main` to match
+the remote:
+
+------------
+    A---B---C---D <- remote 'main'
+	            ^--- local 'main'
+------------
 <repository> should be the name of a remote repository as
 passed to linkgit:git-fetch[1].  <refspec> can name an
 arbitrary remote ref (for example, the name of a tag) or even
@@ -38,28 +54,6 @@ Default values for <repository> and <branch> are read from the
 "remote" and "merge" configuration for the current branch
 as set by linkgit:git-branch[1] `--track`.
 
-Assume the following history exists and the current branch is
-"`master`":
-
-------------
-	  A---B---C master on origin
-	 /
-    D---E---F---G master
-	^
-	origin/master in your repository
-------------
-
-Then "`git pull`" will fetch and replay the changes from the remote
-`master` branch since it diverged from the local `master` (i.e., `E`)
-until its current commit (`C`) on top of `master` and record the
-result in a new commit along with the names of the two parent commits
-and a log message from the user describing the changes.
-
-------------
-	  A---B---C origin/master
-	 /         \
-    D---E---F---G---H master
-------------
 
 See linkgit:git-merge[1] for details, including how conflicts
 are presented and handled.
