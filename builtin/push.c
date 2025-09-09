@@ -253,12 +253,14 @@ static void setup_default_push_refspecs(int *flags, struct remote *remote)
 	switch (push_default) {
 	default:
 	case PUSH_DEFAULT_UNSPECIFIED:
-	case PUSH_DEFAULT_SIMPLE:
+	case PUSH_DEFAULT_SIMPLE: {
+		const char *upstream = get_upstream_ref(*flags, branch, remote->name);
 		if (!same_remote)
 			break;
-		if (strcmp(branch->refname, get_upstream_ref(*flags, branch, remote->name)))
+		if (strcmp(branch->refname, upstream))
 			die_push_simple(branch, remote);
 		break;
+	}
 
 	case PUSH_DEFAULT_UPSTREAM:
 		if (!same_remote)

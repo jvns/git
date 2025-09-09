@@ -139,6 +139,11 @@ test_expect_success 'push from/to new branch fails with upstream and simple ' '
 	test_push_failure upstream
 '
 
+test_expect_success 'push to new branch to non-origin remote fails with simple ' '
+	git checkout -b new-branch-4 &&
+	test_must_fail git -c push.default=simple push parent1
+'
+
 # The behavior here is surprising but not entirely wrong:
 #  - the current branch is used to determine the target remote
 #  - the "matching" push default pushes matching branches, *ignoring* the
