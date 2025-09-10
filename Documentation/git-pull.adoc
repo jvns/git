@@ -36,8 +36,9 @@ the remote:
 	            ^--- local 'main'
 ------------
 
-`git pull` has two stages: first it runs `git fetch` to fetch the remote
-branch, and then it integrates the remote branch into your current branch.
+`git pull` first runs `git fetch` with the same arguments to fetch
+remote branch(es), then it figures out which remote branch to integrate,
+and finally it integrates the remote branch into your current branch.
 
 By default, `git pull` will refuse to integrate changes if the remote
 has diverged from your current branch. You need to specify if you want to
