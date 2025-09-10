@@ -52,16 +52,8 @@ merge, rebase, or squash, like this:
 You can also set the configuration options `pull.rebase`, `pull.squash`,
 or `pull.ff` with your preferred behaviour.
 
-<repository> should be the name of a remote repository as
-passed to linkgit:git-fetch[1].  <refspec> can name an
-arbitrary remote ref (for example, the name of a tag) or even
-a collection of refs with corresponding remote-tracking branches
-(e.g., refs/heads/{asterisk}:refs/remotes/origin/{asterisk}),
-but usually it is the name of a branch in the remote repository.
-
-Default values for <repository> and <branch> are read from the
-"remote" and "merge" configuration for the current branch
-as set by linkgit:git-branch[1] `--track`.
+If you run `git pull` without any arguments, it will pull from the
+current branch's remote-tracking branch.
 
 If there's a merge conflict during the merge or rebase, you can abort it
 with `git merge --abort` or `git rebase --abort`.
@@ -75,6 +67,16 @@ a conflict.
 
 OPTIONS
 -------
+<repository>::
+	The "remote" repository to pull from.  This parameter can be either
+	a URL (see the section <<URLS,GIT URLS>> below) or the name
+	of a remote (see the section <<REMOTES,REMOTES>> below).
+
+<refspec>::
+	<refspec> can name an arbitrary remote ref (for example, the name of
+	a tag) or even a collection of refs with corresponding remote-tracking
+	branches (e.g., refs/heads/{asterisk}:refs/remotes/origin/{asterisk}),
+	but usually it is the name of a branch in the remote repository.
 
 -q::
 --quiet::
