@@ -15,7 +15,7 @@ SYNOPSIS
 DESCRIPTION
 -----------
 
-Incorporates changes from a remote repository into the current branch.
+Incorporates (??) changes from a remote repository into the current branch.
 If the current branch is behind the remote, then by default it will
 update the current branch to match the remote.
 
@@ -36,6 +36,9 @@ the remote:
 	            ^--- local 'main'
 ------------
 
+`git pull` has two stages: first it runs `git fetch` to fetch the remote
+branch, and then it integrates the remote branch into your current branch.
+
 By default, `git pull` will refuse to integrate changes if the remote
 has diverged from your current branch. You need to specify if you want to
 merge, rebase, or squash, like this:
@@ -46,8 +49,8 @@ merge, rebase, or squash, like this:
 4. `git pull --ff-only` will force Git to fail if the remote has
 	diverged.
 
-You can also set configuration options `pull.rebase`, `pull.squash`, or
-`pull.ff` to set your preferred behaviour.
+You can also set the configuration options `pull.rebase`, `pull.squash`,
+or `pull.ff` with your preferred behaviour.
 
 <repository> should be the name of a remote repository as
 passed to linkgit:git-fetch[1].  <refspec> can name an
