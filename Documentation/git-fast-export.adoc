@@ -153,7 +153,7 @@ by keeping the marks the same across runs.
 --anonymize-map=<from>[:<to>]::
 	Convert token `<from>` to `<to>` in the anonymized output. If
 	`<to>` is omitted, map `<from>` to itself (i.e., do not
-	anonymize it). See the section on `ANONYMIZING` below.
+	anonymize it). See the section on <<ANONYMIZING,ANONYMIZING>> below.
 
 --reference-excluded-parents::
 	By default, running a command such as `git fast-export
@@ -219,6 +219,7 @@ referenced by that revision range contains the string
 'refs/heads/master'.
 
 
+[[ANONYMIZING]]
 ANONYMIZING
 -----------
 
