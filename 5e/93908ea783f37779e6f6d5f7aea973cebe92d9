@@ -1,0 +1,22 @@
+command-list.txt
+  s_348730cdc9b5a2::t_a933a2a2d7cfa8 228
+  s_348730cdc9b5a2::t_0e7fe320dceff7 251
+  s_348730cdc9b5a2::t_895418e9720b37 220
+  s_348730cdc9b5a2::t_da9aad1b5fa92f 238
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.16",
+  "base_commit_sha": "5e93908ea783f37779e6f6d5f7aea973cebe92d9",
+  "prompts": {},
+  "sessions": {
+    "s_348730cdc9b5a2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e14ec654-c183-4874-961d-af218b640c76",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
