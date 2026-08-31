@@ -1,0 +1,14 @@
+Documentation/git-pull.adoc
+  h_47bf5c380f00d8 41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "48c3f7ceed2ad73261bd02bb305d0ff2b22a5af0",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
