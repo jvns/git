@@ -1,0 +1,19 @@
+Documentation/gitmergeconflicts.adoc
+  s_c90b6ef88f51da::t_04e8870fae329c 98
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "8eee9360e30c7886e0dc227fa1b920d51892d341",
+  "prompts": {},
+  "sessions": {
+    "s_c90b6ef88f51da": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14de31f5-8e57-443d-94ac-2cf147706f44",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
