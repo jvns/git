@@ -1,0 +1,16 @@
+Documentation/gitmergeconflicts.adoc
+  h_47bf5c380f00d8 1-268
+Documentation/meson.build
+  h_47bf5c380f00d8 205
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "df691715b7bc44d2f4dbf624dd9481618a739819",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
