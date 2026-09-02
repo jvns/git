@@ -1,0 +1,19 @@
+Documentation/Makefile
+  s_c90b6ef88f51da::t_8f6b557f567956 61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "063b93d8ac7ab531c0e808df574e57e24095e859",
+  "prompts": {},
+  "sessions": {
+    "s_c90b6ef88f51da": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14de31f5-8e57-443d-94ac-2cf147706f44",
+        "model": "unknown"
+      },
+      "human_author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
