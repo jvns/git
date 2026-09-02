@@ -1,0 +1,272 @@
+gitmergeconflicts(7)
+====================
+
+NAME
+----
+gitmergeconflicts - Guide to handling merge conflicts
+
+
+DESCRIPTION
+-----------
+
+Merge conflicts can happen during a `git merge`, `git rebase`, `git
+cherry-pick`, `git pull`, `git revert`, or  `git am`.  All of those
+commands use the same merge algorithm, and the process for resolving a
+merge conflict is always very similar.
+
+The most common ways to handle a merge conflict are:
+
+* Resolve the conflict. (see <<resolve,HOW TO RESOLVE A MERGE CONFLICT>>
+  below for details)
+* Or stop the operation and return your branch to its original state
+  with the appropriate `--abort` command, for example one of:
+
+   git rebase --abort
+   git merge --abort
+   git cherry-pick --abort
+
+[[format]]
+HOW MERGE CONFLICTS ARE FORMATTED
+---------------------------------
+
+Merge conflicts happen when both of the sides being merged edit the same
+area of a file. When this happens, Git will modify the conflicted file
+to include merge conflict markers `<<<<<<<` and `>>>>>>>`. For example,
+here's a merge conflict where both sides edited the text "hello world"
+in different ways:
+
+----
+def say_hello():
+<<<<<<< HEAD
+    greeting = "hello world"
+=======
+    greeting = "hello world!"
+>>>>>>> refactor
+    print(greeting)
+    return
+----
+
+Here's how to interpret this. Usually:
+
+* The first part (between the `<<<<<<<` and `=======`) is the code
+  from the commit that you had checked out when you ran the merge (or
+  cherry-pick, etc) command. Git refers to this as the "ours" side of
+  the conflict.
+* The second part (between the `=======` and `>>>>>>>`) is the code
+  from the other commit. Git refers to this as the "theirs" side of the
+  conflict.
+
+**However**, if the merge conflict happened during a `git rebase`, it's
+the opposite. This is because under the hood, `git rebase some_branch`
+checks out the `some_branch` commit first before doing the merge
+operation.
+
+The `--ours` and `--theirs` flags to `git restore`, `git diff`, and
+`git checkout` refer to this meaning of "ours" and "theirs". Also, if
+you see "us" or "them" in `git status` during a merge conflict, it means
+the same thing.
+
+Many Git users find merge conflicts quite difficult to read, and
+so there are many tools that can help.
+See <<tools,TOOLS FOR HANDLING MERGE CONFLICTS>> below for some of those
+tools, and <<diff3,DIFF3 AND ZDIFF3 FORMAT>> below for an alternate
+formatting option.
+
+[[resolve]]
+HOW TO RESOLVE A MERGE CONFLICT
+-------------------------------
+
+The process for resolving a merge conflict is:
+
+1. Run `git status` to get a list of files with merge conflicts
+2. For each one, find the conflict markers
+   (the `>>>>>>`, `=======`, `<<<<<<<`) and edit the code to
+   fix the conflict
+3. Run `git add FILENAME` for each file to mark the conflict as resolved
+4. Run the appropriate `--continue` command to continue the operation
+   that was interrupted by the conflict, for example:
+
+	   git rebase --continue
+	   git merge --continue
+	   git cherry-pick --continue
++
+If the operation was a `git merge`, you can also run `git commit` to
+finish handling the conflict.
+
+[[tools]]
+TOOLS FOR HANDLING MERGE CONFLICTS
+-----------------------------------
+
+Here are some tools you can use to help resolve merge conflicts:
+
+* Use a mergetool. If you have a mergetool configured, `git mergetool`
+  will launch a graphical mergetool which will work through the merge
+  with you. You can use the `merge.tool` config setting to configure
+  which mergetool to use.
+
+* Use `git diff --check` to make sure you haven't left any merge
+  conflict markers in a file by accident. (TODO: test what this does)
+
+* Choose the changes from one side of the conflict, and discard the
+  other side's changes, with `git restore --ours FILENAME` or
+  `git restore --theirs FILENAME`. `--ours` is the code listed first in
+  the conflict, and `--theirs` is the other side. (as explained in
+  <<format,HOW MERGE CONFLICTS ARE FORMATTED>> above)
+
+* Look at the original files.  `git show :1:filename` shows the
+  common ancestor, `git show :2:filename` shows the "ours"
+  version, and `git show :3:filename` shows the "theirs"
+  version.
+
+EXAMPLE OF RESOLVING A MERGE CONFLICT
+-------------------------------------
+
+If you see this in your code during a merge conflict:
+
+----
+def say_hello():
+<<<<<<< HEAD
+    print("hello world!")
+=======
+    print("hello, world")
+>>>>>>> hello
+    return
+----
+
+Then you might edit that part of the code to look something like this,
+which combines the code from both sides in an appropriate way.
+
+----
+def say_hello():
+    print("hello, world!")
+    return
+----
+
+[[diff3]]
+DIFF3 and ZDIFF3 FORMAT
+-----------------------
+
+By default, Git doesn't include the original code when formatting
+a merge conflict. To include the original code, you can set the
+configuration option `merge.conflictstyle` to `diff3` or `zdiff3`.
+
+Here's an example of what a merge conflict would look when using
+`diff3`. It shows the "ours" side of the conflict, the original code
+("hello world"), and the "theirs" side of the conflict. With this view,
+you can see that the original code was change to use an extra variable.
+
+----
+def say_hello():
+<<<<<<< HEAD
+    greeting = "hello world"
+    print(greeting)
+||||||| f569694
+    print("hello world")
+=======
+    greeting = "hello world!"
+    print(greeting)
+>>>>>>> hello
+    return
+----
+
+Here's the same example using `zdiff3`. `zdiff3` takes lines that are
+shared between both sides (the `print(greeting)` line) and moves them
+outside the conflicted area. This results in shorter merge conflicts,
+but the downside is that it's impossible to tell in this case if
+`print(greeting)` was part of the original code or not.
+
+----
+def say_hello():
+<<<<<<< HEAD
+    greeting = "hello world"
+||||||| f569694
+    print("hello world")
+=======
+    greeting = "hello world!"
+>>>>>>> hello
+    print(greeting)
+    return
+----
+
+[[automerge]]
+THE `AUTO_MERGE` REFERENCE
+--------------------------
+
+If you're using the default `ort` merge strategy, Git will create a
+reference called `AUTO_MERGE` with the result of running the merge
+algorithm. `git diff AUTO_MERGE` will show what changes you've made so
+far to resolve conflicts.
+
+For example, if we resolved the conflict above by choosing the first
+version, the diff would look like this:
+
+----
+ def say_hello():
+-<<<<<<< HEAD
+     greeting = "hello world"
+     print(greeting)
+-=======
+-    greeting = "hello world!"
+-    print(greeting)
+->>>>>>> hello
+     return
+----
+
+[[pull]]
+HANDLING MERGE CONFLICTS DURING `git pull`
+------------------------------------------
+
+If there's a merge conflict during a `git pull`, you need to know
+whether `git pull` was doing a merge or a rebase.
+
+For example, if you run `git pull --rebase`, then you'll need to run
+`git rebase --abort` to abort the merge, and then run `git rebase
+--continue` to continue rebasing after it's been resolved.
+
+This can be confusing, and so many people avoid having merge conflicts
+during a `git pull` entirely by using a Git workflow where `git pull`
+only ever does fast-forward merges. If you manage your git workflow this
+way, you can enforce this using the configuration setting `git config
+--global pull.ff only`.
+
+See linkgit:git-pull[1] for more.
+
+[[deleted]]
+MERGE CONFLICTS WITH DELETED FILES
+----------------------------------
+
+If one of the sides of the merge deleted a file and the other changed
+it, then Git will keep the changed file but mark it as conflicted that
+you can decide what to do.
+
+For example, `git status` might show something like this:
+
+----
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add/rm <file>..." as appropriate to mark resolution)
+        deleted by us:   hello.py
+----
+
+The "us" in "deleted by us" means the same thing as "ours" described in
+HOW MERGE CONFLICTS ARE FORMATTED above.
+
+SEE ALSO
+--------
+
+linkgit:git-revert[1]
+linkgit:git-merge[1]
+linkgit:git-rebase[1]
+linkgit:git-am[1]
+linkgit:git-cherry-pick[1]
+linkgit:git-pull[1]
+linkgit:git-restore[1]
+linkgit:git-diff[1]
+
+GIT
+----
+Part of the linkgit:git[1] suite
