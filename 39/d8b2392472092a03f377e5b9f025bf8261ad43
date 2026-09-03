@@ -1,0 +1,14 @@
+Documentation/git-rebase.adoc
+  h_47bf5c380f00d8 49,62-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "39d8b2392472092a03f377e5b9f025bf8261ad43",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
