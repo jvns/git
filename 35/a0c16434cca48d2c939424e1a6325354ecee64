@@ -1,0 +1,29 @@
+Documentation/gitmergeconflicts.adoc
+  s_c90b6ef88f51da::t_04e8870fae329c 98
+  h_47bf5c380f00d8 1-97,99-272
+Documentation/Makefile
+  s_c90b6ef88f51da::t_8f6b557f567956 61
+Documentation/meson.build
+  h_47bf5c380f00d8 205
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "35a0c16434cca48d2c939424e1a6325354ecee64",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  },
+  "sessions": {
+    "s_c90b6ef88f51da": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "14de31f5-8e57-443d-94ac-2cf147706f44",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
