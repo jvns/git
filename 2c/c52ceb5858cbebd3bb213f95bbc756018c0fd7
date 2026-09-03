@@ -1,0 +1,14 @@
+Documentation/git-revert.adoc
+  h_47bf5c380f00d8 34-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "2cc52ceb5858cbebd3bb213f95bbc756018c0fd7",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
