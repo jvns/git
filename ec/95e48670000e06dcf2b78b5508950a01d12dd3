@@ -1,0 +1,54 @@
+po/bg.po
+  h_47bf5c380f00d8 26199
+po/ca.po
+  h_47bf5c380f00d8 31826
+po/de.po
+  h_47bf5c380f00d8 23476
+po/el.po
+  h_47bf5c380f00d8 7113
+po/es.po
+  h_47bf5c380f00d8 21434
+po/fr.po
+  h_47bf5c380f00d8 25631
+po/ga.po
+  h_47bf5c380f00d8 25388
+po/id.po
+  h_47bf5c380f00d8 31205
+po/it.po
+  h_47bf5c380f00d8 9482
+po/ko.po
+  h_47bf5c380f00d8 5011
+po/pl.po
+  h_47bf5c380f00d8 10058
+po/pt_PT.po
+  h_47bf5c380f00d8 10244
+po/ru.po
+  h_47bf5c380f00d8 21009
+po/sv.po
+  h_47bf5c380f00d8 24900
+po/tr.po
+  h_47bf5c380f00d8 25033
+po/uk.po
+  h_47bf5c380f00d8 25342
+po/vi.po
+  h_47bf5c380f00d8 23861
+po/zh_CN.po
+  h_47bf5c380f00d8 30719
+po/zh_TW.po
+  h_47bf5c380f00d8 30571
+t/t7060-wtstatus.sh
+  h_47bf5c380f00d8 40,144,177,201
+t/t7512-status-help.sh
+  h_47bf5c380f00d8 34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "ec95e48670000e06dcf2b78b5508950a01d12dd3",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
