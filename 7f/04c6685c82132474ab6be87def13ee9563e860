@@ -1,0 +1,88 @@
+Documentation/git-gc.adoc
+  h_47bf5c380f00d8 42-43,49-50,87,106,133,141
+Documentation/git-ls-files.adoc
+  h_47bf5c380f00d8 101,113-114,234,296
+Documentation/git-checkout.adoc
+  h_47bf5c380f00d8 30-31,72,214-215,376,509
+Documentation/git-fast-import.adoc
+  h_47bf5c380f00d8 34,460,1246,1295
+Documentation/git-push.adoc
+  h_47bf5c380f00d8 135-136,341-343,572
+Documentation/git-format-patch.adoc
+  h_47bf5c380f00d8 433-434,706
+Documentation/git-add.adoc
+  h_47bf5c380f00d8 120,378
+Documentation/git-http-backend.adoc
+  h_47bf5c380f00d8 21,72,261,295
+Documentation/revisions.adoc
+  h_47bf5c380f00d8 1,304-305
+Documentation/gitsubmodules.adoc
+  h_47bf5c380f00d8 24-25,106-107,126,170
+Documentation/git-pack-objects.adoc
+  h_47bf5c380f00d8 366-367,414
+Documentation/git-cat-file.adoc
+  h_47bf5c380f00d8 118,136,152,298,337,342,451
+Documentation/git-merge-tree.adoc
+  h_47bf5c380f00d8 38
+Documentation/git-filter-branch.adoc
+  h_47bf5c380f00d8 128,246
+Documentation/git-rev-parse.adoc
+  h_47bf5c380f00d8 41-42,47,358,465
+Documentation/git-notes.adoc
+  h_47bf5c380f00d8 31-33,118-119,144,231-232,285,369
+Documentation/gitworkflows.adoc
+  h_47bf5c380f00d8 248-250,328
+Documentation/fetch-options.adoc
+  h_47bf5c380f00d8 202,213
+Documentation/git-for-each-ref.adoc
+  h_47bf5c380f00d8 67-68,452
+Documentation/git-stash.adoc
+  h_47bf5c380f00d8 136,318
+Documentation/git-maintenance.adoc
+  h_47bf5c380f00d8 98,219
+Documentation/git-repo.adoc
+  h_47bf5c380f00d8 25-26,92
+Documentation/git-credential-cache.adoc
+  h_47bf5c380f00d8 27,57
+Documentation/git-send-email.adoc
+  h_47bf5c380f00d8 53,81,562
+Documentation/howto/revert-a-faulty-merge.adoc
+  h_47bf5c380f00d8 149-150,187
+Documentation/git-p4.adoc
+  h_47bf5c380f00d8 122-123,249,301,479,510,649-650
+Documentation/git-credential-store.adoc
+  h_47bf5c380f00d8 27,70
+Documentation/git-grep.adoc
+  h_47bf5c380f00d8 61,259-261,341,353
+Documentation/git-prune.adoc
+  h_47bf5c380f00d8 18,70
+Documentation/git-worktree.adoc
+  h_47bf5c380f00d8 53-54,363
+Documentation/git-fast-export.adoc
+  h_47bf5c380f00d8 151,156,222
+Documentation/git-fetch.adoc
+  h_47bf5c380f00d8 106
+Documentation/git-svn.adoc
+  h_47bf5c380f00d8 129,242,527,949,997,1139
+Documentation/git-rebase.adoc
+  h_47bf5c380f00d8 20-21,79-80,92,222-223,244,259,287,308,330,338,350,362,371,413,448,473,493,500,513,519,547-548,573,580,606,623-625,642,644,821-822,832,988,1024,1150,1289
+Documentation/git-ls-tree.adoc
+  h_47bf5c380f00d8 57,102
+Documentation/git-bundle.adoc
+  h_47bf5c380f00d8 46,97-98,131,174
+Documentation/git-replay.adoc
+  h_47bf5c380f00d8 23,121
+Documentation/gitremote-helpers.adoc
+  h_47bf5c380f00d8 89,127,176,249,273-276,441,453
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7f04c6685c82132474ab6be87def13ee9563e860",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
