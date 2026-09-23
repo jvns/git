@@ -1,0 +1,14 @@
+.gitattributes
+  h_47bf5c380f00d8 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2b78e22917ae0aacbe787b3db6e63b3c9d9d505e",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
