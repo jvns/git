@@ -1,0 +1,15 @@
+Documentation/git-checkout.adoc
+  h_47bf5c380f00d8 378-379,381-382,384-385,387-389,391-394,398,400-403,405-408,410,412-413,415-416
+  h_47bf5c380f00d8 395-396
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e07516ddbcb549ad5f830718108d5596023bbcaf",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
