@@ -1,0 +1,23 @@
+gitdetachedhead(7)
+===============
+
+NAME
+----
+gitdetachedhead - How detached HEAD state works
+
+SYNOPSIS
+--------
+Explanation of detached HEAD state
+
+DESCRIPTION
+-----------
+
+include::detached-head.adoc[]
+
+SEE ALSO
+--------
+linkgit:git-switch[7]
+
+GIT
+---
+Part of the linkgit:git[1] suite
