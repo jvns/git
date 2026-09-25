@@ -26,7 +26,7 @@ is to use `git switch` instead of `git checkout` to switch branches.
 `git switch` won't let you detach unless you explicitly pass the
 `--detach` argument.
 
-To get back onto a branch, you have two options:
+To get back onto a branch, you can:
 
 1. Switch to the branch you want to be on, with `git switch BRANCHNAME`.
 2. Create a new branch at the current commit, with `git switch -c BRANCHNAME`.
