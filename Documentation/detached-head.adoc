@@ -1,13 +1,9 @@
-"Detached HEAD state" might sound worrisome, but it can be useful and
-it's easy to get out of.
+`HEAD` is where Git stores your current branch. `HEAD` can either be:
 
-Git stores your current branch in a file called `.git/HEAD`.
-That file always contains either:
-
-1. A branch name, which your current branch (the normal case)
+1. A branch, which is your current branch (the normal case)
 2. A commit ID (this is called "detached HEAD state")
 
-By itself, `.git/HEAD` being a commit ID can be useful. For example, it
+By itself, `HEAD` being a commit ID can be useful. For example, it
 lets you look at an old version of your code (with `git checkout COMMIT_ID`),
 and Git does it internally during a rebase.
 
