@@ -403,9 +403,8 @@ What next?
 ----------
 
 At this point you should know everything necessary to read the man
-pages for any of the git commands; one good place to start would be
-with the commands mentioned in linkgit:giteveryday[7].  You
-should be able to find any unknown jargon in linkgit:gitglossary[7].
+pages for any of the git commands.
+You should be able to find any unknown jargon in linkgit:gitglossary[7].
 
 The link:user-manual.html[Git User's Manual] provides a more
 comprehensive introduction to Git.
@@ -428,7 +427,6 @@ linkgit:gitcvs-migration[7],
 linkgit:gitcore-tutorial[7],
 linkgit:gitglossary[7],
 linkgit:git-help[1],
-linkgit:giteveryday[7],
 link:user-manual.html[The Git User's Manual]
 
 GIT

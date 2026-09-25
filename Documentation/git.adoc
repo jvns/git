@@ -22,9 +22,8 @@ Git is a fast, scalable, distributed revision control system with an
 unusually rich command set that provides both high-level operations
 and full access to internals.
 
-See linkgit:gittutorial[7] to get started, then see
-linkgit:giteveryday[7] for a useful minimum set of
-commands.  The link:user-manual.html[Git User's Manual] has a more
+See linkgit:gittutorial[7] to get started.
+The link:user-manual.html[Git User's Manual] has a more
 in-depth introduction.  See linkgit:gitdatamodel[7] if you want to
 learn about the data model and important terminology.
 
@@ -1201,7 +1200,7 @@ the Git Security mailing list <git-security@googlegroups.com>.
 SEE ALSO
 --------
 linkgit:gittutorial[7], linkgit:gittutorial-2[7],
-linkgit:giteveryday[7], linkgit:gitcvs-migration[7],
+linkgit:gitcvs-migration[7],
 linkgit:gitglossary[7], linkgit:gitdatamodel[7],
 linkgit:gitcore-tutorial[7], linkgit:gitcli[7],
 link:user-manual.html[The Git User's Manual],
