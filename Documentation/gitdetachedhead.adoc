@@ -11,12 +11,11 @@ Explanation of detached HEAD state
 
 DESCRIPTION
 -----------
-
 include::detached-head.adoc[]
 
 SEE ALSO
 --------
-linkgit:git-switch[7]
+There's a list of other Git concept guides at `git help --guides`
 
 GIT
 ---
