@@ -1,0 +1,20 @@
+Documentation/MyFirstObjectWalk.adoc
+  h_47bf5c380f00d8 148
+Documentation/gitcore-tutorial.adoc
+  h_47bf5c380f00d8 19
+Documentation/gitcvs-migration.adoc
+  h_47bf5c380f00d8 22,82-83
+Documentation/git.adoc
+  h_47bf5c380f00d8 25-26,1201
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "02b5eaf13e1f740afa1d76c64f8ddd2f4d48ff9f",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
