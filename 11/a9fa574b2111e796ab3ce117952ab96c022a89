@@ -1,0 +1,14 @@
+command-list.txt
+  h_47bf5c380f00d8 235
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "11a9fa574b2111e796ab3ce117952ab96c022a89",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
