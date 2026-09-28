@@ -1,0 +1,14 @@
+Documentation/git.adoc
+  h_47bf5c380f00d8 25-37
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c4cc127f582ceed32dc093c7f81fc7f21f7ce568",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
