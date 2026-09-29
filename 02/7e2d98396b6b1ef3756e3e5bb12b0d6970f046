@@ -1,0 +1,25 @@
+Documentation/meson.build
+  h_47bf5c380f00d8 481
+Documentation/WorkflowForGit.adoc
+  h_47bf5c380f00d8 1-460
+Documentation/SubmittingPatches
+  h_47bf5c380f00d8 153-154,177-178
+Documentation/gitworkflows.adoc
+  h_47bf5c380f00d8 17-18,25-27,48-49,54,57,63,73-75,77-78,80-81
+  h_47bf5c380f00d8 66-67,69-71
+Documentation/git-cherry.adoc
+  h_47bf5c380f00d8 49
+Documentation/Makefile
+  h_47bf5c380f00d8 116
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "027e2d98396b6b1ef3756e3e5bb12b0d6970f046",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
