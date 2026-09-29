@@ -1,0 +1,18 @@
+Documentation/Makefile
+  h_47bf5c380f00d8 116
+Documentation/WorkflowForGit.adoc
+  h_47bf5c380f00d8 1-460
+Documentation/meson.build
+  h_47bf5c380f00d8 481
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "43609ee029449b2e895efcb4a8e737f9e0982a82",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
