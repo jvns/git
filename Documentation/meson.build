@@ -478,6 +478,7 @@ if get_option('docs').contains('html')
     'ReviewingGuidelines.adoc',
     'SubmittingPatches',
     'ToolsForGit.adoc',
+    'WorkflowForGit.adoc',
     'git-bisect-lk2009.adoc',
     'git-tools.adoc',
   ]
