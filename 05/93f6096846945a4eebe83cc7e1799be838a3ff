@@ -1,0 +1,14 @@
+Documentation/git-cherry-pick.adoc
+  h_47bf5c380f00d8 26-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0593f6096846945a4eebe83cc7e1799be838a3ff",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
