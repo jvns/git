@@ -1,0 +1,14 @@
+Documentation/lint-man-section-order.perl
+  h_47bf5c380f00d8 56-59,100-101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b6202663775a803344a6a677aeb47ac30051d84a",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
