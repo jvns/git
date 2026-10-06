@@ -1,0 +1,14 @@
+advice.c
+  h_47bf5c380f00d8 281-282,284
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "bc04822f9c3897fb41149d4dad579c5110c2f15b",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
