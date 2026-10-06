@@ -1,0 +1,18 @@
+wt-status.c
+  h_47bf5c380f00d8 1276
+t/t7060-wtstatus.sh
+  h_47bf5c380f00d8 40,144,177,201
+t/t7512-status-help.sh
+  h_47bf5c380f00d8 34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "1f8e130270228a43f2de064d91a9bcb9a8f13ea6",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
