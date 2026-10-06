@@ -1,0 +1,23 @@
+command-list.txt
+  h_47bf5c380f00d8 221
+Documentation/git-checkout.adoc
+  h_47bf5c380f00d8 380
+Documentation/detached-head.adoc
+  h_47bf5c380f00d8 1-25,27-36
+  h_47bf5c380f00d8 26
+advice.c
+  h_47bf5c380f00d8 294
+Documentation/gitdetachedhead.adoc
+  h_47bf5c380f00d8 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "25c70ea12bb18382aad57625ed21641f07a4524e",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
