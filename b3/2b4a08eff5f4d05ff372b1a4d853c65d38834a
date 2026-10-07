@@ -1,0 +1,18 @@
+command-list.txt
+  h_47bf5c380f00d8 235
+Documentation/gitmergeconflicts.adoc
+  h_47bf5c380f00d8 31-50,56,149-152
+Documentation/git-cherry-pick.adoc
+  h_47bf5c380f00d8 26-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "b32b4a08eff5f4d05ff372b1a4d853c65d38834a",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
