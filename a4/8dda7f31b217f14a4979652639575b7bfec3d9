@@ -1,0 +1,26 @@
+Documentation/git-checkout.adoc
+  h_47bf5c380f00d8 380
+advice.c
+  h_47bf5c380f00d8 294
+Documentation/detached-head.adoc
+  h_47bf5c380f00d8 1-43
+Documentation/gitdetachedhead.adoc
+  h_47bf5c380f00d8 1-14
+command-list.txt
+  h_47bf5c380f00d8 221
+Documentation/Makefile
+  h_47bf5c380f00d8 57
+Documentation/meson.build
+  h_47bf5c380f00d8 200
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "a48dda7f31b217f14a4979652639575b7bfec3d9",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
