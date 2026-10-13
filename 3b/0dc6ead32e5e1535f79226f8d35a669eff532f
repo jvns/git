@@ -1,0 +1,16 @@
+Documentation/gittutorial.adoc
+  h_47bf5c380f00d8 1-741
+Documentation/out
+  h_47bf5c380f00d8 1-2663
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "3b0dc6ead32e5e1535f79226f8d35a669eff532f",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
