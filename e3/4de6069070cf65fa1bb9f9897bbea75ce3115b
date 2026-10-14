@@ -1,0 +1,14 @@
+Documentation/gitmergeconflicts.adoc
+  h_47bf5c380f00d8 24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e34de6069070cf65fa1bb9f9897bbea75ce3115b",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
