@@ -1,0 +1,18 @@
+Documentation/Makefile
+  h_47bf5c380f00d8 67
+Documentation/meson.build
+  h_47bf5c380f00d8 210
+command-list.txt
+  h_47bf5c380f00d8 247
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9ad46db83f44a27cd18a29d61ed0c3ae0fb03e0a",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
