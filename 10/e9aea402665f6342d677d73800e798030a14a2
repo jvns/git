@@ -1,0 +1,14 @@
+Documentation/gittutorial-branches.adoc
+  h_47bf5c380f00d8 54,342
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "10e9aea402665f6342d677d73800e798030a14a2",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
