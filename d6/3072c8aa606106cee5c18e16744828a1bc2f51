@@ -1,0 +1,14 @@
+Documentation/CodingGuidelines
+  h_47bf5c380f00d8 834-836
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d63072c8aa606106cee5c18e16744828a1bc2f51",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
