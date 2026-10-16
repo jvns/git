@@ -1,0 +1,15 @@
+Documentation/detached-head.adoc
+  h_47bf5c380f00d8 7-8,10-11,23-24,31,56
+  h_47bf5c380f00d8 9
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b846b002ad875b04a9c2b6aebf3f319f2c4d3332",
+  "prompts": {},
+  "humans": {
+    "h_47bf5c380f00d8": {
+      "author": "Julia Evans <julia@jvns.ca>"
+    }
+  }
+}
