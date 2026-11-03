@@ -22,15 +22,24 @@ git tag -v [--format=<format>] <tagname>...
 DESCRIPTION
 -----------
 
-Add a tag reference in `refs/tags/`, unless `-d`/`-l`/`-v` is given
-to delete, list or verify tags.
+There are several ways of using `git tag`:
 
+[horizontal]
+Create a tag:: `git tag <tagname>`
+Create an annotated tag:: `git tag -a <tagname>`
+Delete a tag:: `git tag -d <tagname>`
+List tags:: `git tag -l`
+Verify a tag's signature:: `git tag -v <tagname>`
+
+When creating a tag, `git tag` will tag the current commit by default.
 Unless `-f` is given, the named tag must not yet exist.
 
-If one of `-a`, `-s`, or `-u <key-id>` is passed, the command
-creates a 'tag' object, and requires a tag message.  Unless
-`-m <msg>` or `-F <file>` is given, an editor is started for the user to type
-in the tag message.
+ANNOTATED TAGS
+--------------
+
+You can create an annotated tag (also known as a "tag object") by
+passing the option `-a`, `-s`, `-u <key-id>`, `-m`, `-F <file>` or
+`--trailer`.
 
 If `-m <msg>` or `-F <file>` or `--trailer <token>[=<value>]` is given
 and `-a`, `-s`, and `-u <key-id>` are absent, `-a` is implied.
@@ -38,25 +47,24 @@ and `-a`, `-s`, and `-u <key-id>` are absent, `-a` is implied.
 Otherwise, a tag reference that points directly at the given object
 (i.e., a lightweight tag) is created.
 
-A cryptographically signed tag object will be created when `-s` or
-`-u <key-id>` is used. The signing backend (GPG, X.509, SSH, etc.) is
-controlled by the `gpg.format` configuration variable, defaulting to
-OpenPGP. When `-u <key-id>` is not used, the committer identity for
-the current user is used to find the key for signing. The
-configuration variable `gpg.program` is used to specify a custom
-signing binary.
+Annotated tags require a message. They contain a creation date, the
+tagger name and e-mail, a tagging message, and an optional cryptographic
+signature.
 
-Tag objects (created with `-a`, `-s`, or `-u`) are called "annotated"
-tags; they contain a creation date, the tagger name and e-mail, a
-tagging message, and an optional cryptographic signature. Whereas a
-"lightweight" tag is simply a name for an object (usually a commit
-object).
+To create a cryptographically signed tag object, use `-s` or
+`-u <key-id>`. The signing backend (GPG, X.509, SSH, etc.) is controlled
+by the `gpg.format` configuration variable, defaulting to OpenPGP.
+When `-u <key-id>` is not used, the committer identity for the current
+user is used to find the key for signing. The configuration variable
+`gpg.program` is used to specify a custom signing binary.
 
 Annotated tags are meant for release while lightweight tags are meant
 for private or temporary object labels. For this reason, some git
 commands for naming objects (like `git describe`) will ignore
 lightweight tags by default.
 
+See linkgit:gitdatamodel[7] for more on the difference between tag
+references ("lightweight tags") and tag objects ("annotated tags").
 
 OPTIONS
 -------
